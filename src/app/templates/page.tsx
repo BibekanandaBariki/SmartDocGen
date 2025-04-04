@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { FaFileAlt, FaSearch, FaArrowRight } from 'react-icons/fa';
+import { FaFileAlt, FaSearch, FaArrowRight, FaSpinner } from 'react-icons/fa';
 
 type Template = {
   id: string;
@@ -13,7 +13,8 @@ type Template = {
   type: 'contract' | 'agreement' | 'notice';
 };
 
-export default function TemplatesPage() {
+// Templates content component that uses client-side state
+function TemplatesContent() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedType, setSelectedType] = useState<string | null>(null);
 
@@ -173,5 +174,22 @@ export default function TemplatesPage() {
       </div>
       <Footer />
     </>
+  );
+}
+
+// Export the page with a Suspense boundary
+export default function TemplatesPage() {
+  return (
+    <Suspense fallback={
+      <div className="container mx-auto px-4 py-12 text-center">
+        <Header />
+        <div className="mt-12">
+          <FaSpinner className="animate-spin w-10 h-10 mx-auto text-primary" />
+          <p className="mt-4 text-xl">Loading templates...</p>
+        </div>
+      </div>
+    }>
+      <TemplatesContent />
+    </Suspense>
   );
 } 

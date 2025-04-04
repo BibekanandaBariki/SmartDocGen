@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useForm } from 'react-hook-form';
 import { useSearchParams } from 'next/navigation';
 import axios from 'axios';
@@ -56,7 +56,8 @@ const templateData: Record<string, Partial<FormData> & { title: string }> = {
   },
 };
 
-export default function GeneratePage() {
+// Create a client component that uses useSearchParams
+function GeneratePageContent() {
   const [step, setStep] = useState(1);
   const [generatedDocument, setGeneratedDocument] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
@@ -216,5 +217,22 @@ export default function GeneratePage() {
       </div>
       <Footer />
     </>
+  );
+}
+
+// Export the page with a Suspense boundary
+export default function GeneratePage() {
+  return (
+    <Suspense fallback={
+      <div className="container mx-auto px-4 py-12 text-center">
+        <Header />
+        <div className="mt-12">
+          <FaSpinner className="animate-spin w-10 h-10 mx-auto text-primary" />
+          <p className="mt-4 text-xl">Loading document generator...</p>
+        </div>
+      </div>
+    }>
+      <GeneratePageContent />
+    </Suspense>
   );
 } 
