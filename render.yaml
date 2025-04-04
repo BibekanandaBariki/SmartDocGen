@@ -1,0 +1,13 @@
+services:
+  # A web service
+  - type: web
+    name: smartdocgen
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: OPENAI_MODEL
+        value: gpt-3.5-turbo
+      - key: OPENAI_API_KEY
+        sync: false # This requires manual entry in the Render dashboard
+    autoDeploy: true 
