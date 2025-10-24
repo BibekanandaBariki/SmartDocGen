@@ -60,7 +60,7 @@ export class PineconeService {
 // Mock spaCy-like functionality
 export class SpacyProcessor {
   static extractEntities(text: string): Array<{ text: string; label: string; start: number; end: number }> {
-    const entities = [];
+    const entities: Array<{ text: string; label: string; start: number; end: number }> = [];
     
     // Date patterns
     const datePatterns = [

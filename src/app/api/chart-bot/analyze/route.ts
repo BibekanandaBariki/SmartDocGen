@@ -35,9 +35,9 @@ function performNLPProcessing(text: string) {
   };
 }
 
-function extractEntities(text: string) {
+function extractEntities(text: string): Array<{ text: string; label: string }> {
   // Mock entity extraction (in real implementation, use spaCy NER)
-  const entities = [];
+  const entities: Array<{ text: string; label: string }> = [];
   const dateRegex = /\b\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4}\b|\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4}\b/gi;
   const dates = text.match(dateRegex) || [];
   dates.forEach(date => entities.push({ text: date, label: 'DATE' }));
