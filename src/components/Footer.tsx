@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -25,6 +25,16 @@ export default function Footer() {
               <li>
                 <Link href="/generate" className="text-gray-400 hover:text-white">
                   Generate
+                </Link>
+              </li>
+              <li>
+                <Link href="/chart-bot" className="text-gray-400 hover:text-white">
+                  Chart Bot
+                </Link>
+              </li>
+              <li>
+                <Link href="/chat-assistant" className="text-gray-400 hover:text-white">
+                  Chat Assistant
                 </Link>
               </li>
               <li>
@@ -60,34 +70,50 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-bold mb-4">Connect</h3>
+            <h3 className="text-lg font-bold mb-4">Connect with Bibekananda</h3>
+            <p className="text-gray-400 mb-4 text-sm">
+              Co-founder & CEO of SmartDocGen
+            </p>
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/bibekanandabariki"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white"
+                className="text-gray-400 hover:text-white transition-colors"
                 aria-label="GitHub"
+                title="GitHub Profile"
               >
                 <FaGithub className="h-6 w-6" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/bibek_bariki"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white"
-                aria-label="Twitter"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Twitter/X"
+                title="Twitter/X Profile"
               >
                 <FaTwitter className="h-6 w-6" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/bibekananda-bariki-89840b324/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white"
+                className="text-gray-400 hover:text-white transition-colors"
                 aria-label="LinkedIn"
+                title="LinkedIn Profile"
               >
                 <FaLinkedin className="h-6 w-6" />
+              </a>
+              <a
+                href="https://www.instagram.com/bibekbariki"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Instagram"
+                title="Instagram Profile"
+              >
+                <FaInstagram className="h-6 w-6" />
               </a>
             </div>
           </div>

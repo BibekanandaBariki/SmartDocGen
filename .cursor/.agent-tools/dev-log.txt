@@ -1,0 +1,32 @@
+
+> smartdocgen@1.0.0 dev
+> next dev
+
+   ▲ Next.js 15.2.4
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.31.94:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.7s
+ ○ Compiling / ...
+ ✓ Compiled / in 1995ms (730 modules)
+ GET / 200 in 2706ms
+ ○ Compiling /generate ...
+ ✓ Compiled /generate in 1660ms (1277 modules)
+ GET /generate 200 in 264ms
+ GET /generate 200 in 1931ms
+ ○ Compiling /templates ...
+ ✓ Compiled /templates in 819ms (1286 modules)
+ GET /templates 200 in 915ms
+ GET /templates 200 in 13ms
+ GET /generate 200 in 46ms
+ GET / 200 in 15ms
+ GET /generate 200 in 41ms
+ GET /templates 200 in 24ms
+ GET /generate?template=gov-legal-notice&type=notice 200 in 13ms
+ ○ Compiling /api/generate ...
+ ✓ Compiled /api/generate in 915ms (1424 modules)
+ POST /api/generate 200 in 1141ms
+ POST /api/generate 200 in 81ms
+ GET / 200 in 89ms

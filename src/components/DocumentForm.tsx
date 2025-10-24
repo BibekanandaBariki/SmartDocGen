@@ -5,6 +5,7 @@ import { FaLightbulb } from 'react-icons/fa';
 
 type FormData = {
   documentType: string;
+  format?: 'standard' | 'government';
   parties: {
     firstParty: {
       name: string;
@@ -29,6 +30,17 @@ type DocumentFormProps = {
 export default function DocumentForm({ register, errors, documentType }: DocumentFormProps) {
   return (
     <div className="space-y-6">
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">Format</label>
+        <select
+          {...register('format')}
+          className="input-field"
+          defaultValue="standard"
+        >
+          <option value="standard">Standard</option>
+          <option value="government">Government (strict template)</option>
+        </select>
+      </div>
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">Document Type</label>
         <select

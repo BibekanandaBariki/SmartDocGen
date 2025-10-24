@@ -4,7 +4,7 @@ import { generateDocument } from '@/lib/openai';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { documentType, parties, terms, description, additionalDetails } = body;
+    const { documentType, parties, terms, description, additionalDetails, format } = body;
 
     if (!documentType || !parties || !terms || !description) {
       return NextResponse.json(
@@ -18,7 +18,8 @@ export async function POST(request: NextRequest) {
       parties,
       terms,
       description, 
-      additionalDetails
+      additionalDetails,
+      format
     });
 
     return NextResponse.json({ document: generatedDocument });

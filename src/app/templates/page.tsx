@@ -68,6 +68,19 @@ function TemplatesContent() {
       description: 'Agreement documenting the sale of goods or services between a buyer and seller.',
       type: 'contract',
     },
+    // Government templates
+    {
+      id: 'gov-contract',
+      title: 'Government Contract Agreement (Official Format)',
+      description: 'Official-style contract agreement with centered articles and justified text.',
+      type: 'agreement',
+    },
+    {
+      id: 'gov-legal-notice',
+      title: 'Government Legal Notice (Official Format)',
+      description: 'Formal legal notice with sender/recipient/subject in official format.',
+      type: 'notice',
+    },
   ];
 
   // Filter templates based on search term and selected type

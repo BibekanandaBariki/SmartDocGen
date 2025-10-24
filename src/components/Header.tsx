@@ -40,6 +40,12 @@ export default function Header() {
             <Link href="/generate" className="text-gray-700 hover:text-primary">
               Generate Documents
             </Link>
+            <Link href="/chart-bot" className="text-gray-700 hover:text-primary">
+              Chart Bot
+            </Link>
+            <Link href="/chat-assistant" className="text-gray-700 hover:text-primary">
+              Chat Assistant
+            </Link>
             <Link href="/templates" className="text-gray-700 hover:text-primary">
               Templates
             </Link>
@@ -66,6 +72,20 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Generate Documents
+              </Link>
+              <Link
+                href="/chart-bot"
+                className="text-gray-700 hover:text-primary px-2 py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Chart Bot
+              </Link>
+              <Link
+                href="/chat-assistant"
+                className="text-gray-700 hover:text-primary px-2 py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Chat Assistant
               </Link>
               <Link
                 href="/templates"

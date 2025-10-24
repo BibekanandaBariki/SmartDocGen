@@ -12,6 +12,7 @@ import { FaSpinner } from 'react-icons/fa';
 
 type FormData = {
   documentType: string;
+  format?: 'standard' | 'government';
   parties: {
     firstParty: {
       name: string;
